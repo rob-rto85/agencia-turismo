@@ -127,13 +127,22 @@ body {
     box-shadow: 0 4px 15px rgba(216, 67, 21, 0.4);
     transition: transform 0.3s ease, background-color 0.3s ease;
     display: inline-block;
+    border: none;
+    cursor: pointer;
 }
 
-.cta-button:hover, 
+.cta-button:hover,
 .cta-button:focus {
     transform: translateY(-3px);
     background-color: #bf360c;
     outline: none;
+}
+
+/* Variante compacta del botón, usada en las tarjetas de servicios/paquetes */
+.cta-button-sm {
+    padding: 8px 20px;
+    font-size: 14px;
+    border-radius: 6px;
 }
 
 .featured-destinations {
@@ -197,17 +206,44 @@ body {
     margin-bottom: 12px;
 }
 
-.card-body .card-meta, 
-.card-body .card-activity,
-.card-body .card-price {
-    font-size: 14px;
-    color: #424242;
-    margin-bottom: 6px;
-    line-height: 1.4;
-}
-
 .card-body strong {
     color: var(--primary-color);
+}
+
+.card-icon {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* Fusionado: antes había dos reglas con el mismo nombre y distinta
+   especificidad, y la de menor especificidad (sin .card-body) nunca
+   se aplicaba. Ahora es una sola regla consistente. */
+.card-body .card-meta,
+.card-body .card-activity {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    font-size: 14.5px;
+    color: #424242;
+    line-height: 1.5;
+}
+
+.card-body .card-meta strong,
+.card-body .card-activity strong {
+    color: var(--primary-color);
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.card-body .card-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 8px;
+    display: block;
 }
 
 .card-body .card-price strong {
@@ -226,38 +262,6 @@ body {
     color: var(--accent-color);
 }
 
-.card-icon {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    margin-right: 8px;
-    flex-shrink: 0;
-}
-
-.card-meta, .card-activity {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 12px;
-    font-size: 14.5px;
-    color: #424242;
-    line-height: 1.5;
-}
-
-.card-meta strong, 
-.card-activity strong {
-    color: var(--primary-color);
-    margin-right: 6px;
-    flex-shrink: 0;
-}
-
-.card-price {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--accent-color);
-    margin-top: 8px;
-    display: block;
-}
-
 .main-footer {
     background-color: var(--dark-color);
     color: var(--white);
@@ -266,6 +270,195 @@ body {
     margin-top: 60px;
     font-size: 14px;
 }
+
+/* ==========================================================================
+   7. ESTILOS ESPECÍFICOS PARA LA PÁGINA NOSOTROS
+   ========================================================================== */
+.page-header {
+    max-width: 1200px;
+    margin: 40px auto 10px auto;
+    padding: 0 20px;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.about-story {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.about-story h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.about-story p {
+    margin-bottom: 15px;
+    color: #424242;
+    text-align: justify;
+}
+
+/* Misión, Visión y Valores en 3 columnas usando Flexbox */
+.mission-vision-values {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.mvv-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.mvv-card {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    flex: 1 1 280px;
+    max-width: 340px;
+    text-align: center;
+}
+
+.mvv-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.mvv-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.mvv-card p {
+    font-size: 14.5px;
+    color: #555555;
+    text-align: justify;
+}
+
+/* Sección de Razones para visitar */
+.reasons-section {
+    max-width: 1200px;
+    margin: 40px auto 60px auto;
+    padding: 0 20px;
+}
+
+.reasons-content {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.reasons-content h3 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.reasons-list {
+    list-style: none;
+}
+
+.reasons-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    color: #424242;
+}
+
+.reasons-list li::before {
+    content: "🌸";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 14px;
+}
+
+
+
+/* ==========================================================================
+   8. ESTILIZACIÓN DEL FORMULARIO DE CONTACTO (Requisito Unidad 2)
+   ========================================================================== */
+.form-container {
+    max-width: 800px;         /* Ancho máximo ideal para formularios limpios */
+    margin: 30px auto 60px auto;
+    padding: 0 20px;
+}
+
+.booking-form {
+    background-color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;      /* Separación controlada entre grupos de datos */
+    display: flex;
+    flex-direction: column;   /* Coloca el label arriba y el input abajo */
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;                /* Espaciado horizontal entre columnas unificadas */
+}
+
+.form-row .form-group {
+    flex: 1;                  /* Distribuye equitativamente las mitades */
+}
+
+.booking-form label {
+    font-weight: 600;
+    font-size: 14.5px;
+    color: var(--dark-color);
+    margin-bottom: 8px;
+}
+
+/* Control estético de todos los inputs, selects y textareas */
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+    font-family: var(--font-family);
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #fafafa;
+    color: var(--dark-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+/* Requisito: Pseudo-clase obligatoria :focus */
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+    border-color: var(--primary-color); /* Cambia a verde al hacer clic */
+    box-shadow: 0 0 8px rgba(46, 125, 50, 0.2);
+    background-color: var(--white);
+    outline: none;
+}
+
+.booking-form textarea {
+    resize: vertical;          /* Solo permite estirar de arriba a abajo */
+}
+
+.form-submit {
+    margin-top: 10px;
+}
+
 
 @media (max-width: 992px) {
     .grid-container {
@@ -278,7 +471,7 @@ body {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .main-nav ul {
         gap: 10px;
         flex-wrap: wrap;
@@ -296,5 +489,14 @@ body {
     .grid-container {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    .booking-form {
+        padding: 25px 20px;   /* Reduce el espacio interno en móviles */
+    }
+
+    .form-row {
+        flex-direction: column; /* Deshace las dos columnas y las coloca una abajo de otra */
+        gap: 0;
     }
 }
