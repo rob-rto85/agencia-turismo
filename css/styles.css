@@ -138,7 +138,6 @@ body {
     outline: none;
 }
 
-/* Variante compacta del botón, usada en las tarjetas de servicios/paquetes */
 .cta-button-sm {
     padding: 8px 20px;
     font-size: 14px;
@@ -218,9 +217,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Fusionado: antes había dos reglas con el mismo nombre y distinta
-   especificidad, y la de menor especificidad (sin .card-body) nunca
-   se aplicaba. Ahora es una sola regla consistente. */
 .card-body .card-meta,
 .card-body .card-activity {
     display: flex;
@@ -271,9 +267,6 @@ body {
     font-size: 14px;
 }
 
-/* ==========================================================================
-   7. ESTILOS ESPECÍFICOS PARA LA PÁGINA NOSOTROS
-   ========================================================================== */
 .page-header {
     max-width: 1200px;
     margin: 40px auto 10px auto;
@@ -305,7 +298,6 @@ body {
     text-align: justify;
 }
 
-/* Misión, Visión y Valores en 3 columnas usando Flexbox */
 .mission-vision-values {
     max-width: 1200px;
     margin: 40px auto;
@@ -347,7 +339,6 @@ body {
     text-align: justify;
 }
 
-/* Sección de Razones para visitar */
 .reasons-section {
     max-width: 1200px;
     margin: 40px auto 60px auto;
@@ -386,13 +377,8 @@ body {
     font-size: 14px;
 }
 
-
-
-/* ==========================================================================
-   8. ESTILIZACIÓN DEL FORMULARIO DE CONTACTO (Requisito Unidad 2)
-   ========================================================================== */
 .form-container {
-    max-width: 800px;         /* Ancho máximo ideal para formularios limpios */
+    max-width: 800px;
     margin: 30px auto 60px auto;
     padding: 0 20px;
 }
@@ -405,18 +391,18 @@ body {
 }
 
 .form-group {
-    margin-bottom: 20px;      /* Separación controlada entre grupos de datos */
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: column;   /* Coloca el label arriba y el input abajo */
+    flex-direction: column;
 }
 
 .form-row {
     display: flex;
-    gap: 20px;                /* Espaciado horizontal entre columnas unificadas */
+    gap: 20px;
 }
 
 .form-row .form-group {
-    flex: 1;                  /* Distribuye equitativamente las mitades */
+    flex: 1;
 }
 
 .booking-form label {
@@ -426,7 +412,6 @@ body {
     margin-bottom: 8px;
 }
 
-/* Control estético de todos los inputs, selects y textareas */
 .booking-form input,
 .booking-form select,
 .booking-form textarea {
@@ -441,18 +426,17 @@ body {
     width: 100%;
 }
 
-/* Requisito: Pseudo-clase obligatoria :focus */
 .booking-form input:focus,
 .booking-form select:focus,
 .booking-form textarea:focus {
-    border-color: var(--primary-color); /* Cambia a verde al hacer clic */
+    border-color: var(--primary-color);
     box-shadow: 0 0 8px rgba(46, 125, 50, 0.2);
     background-color: var(--white);
     outline: none;
 }
 
 .booking-form textarea {
-    resize: vertical;          /* Solo permite estirar de arriba a abajo */
+    resize: vertical;
 }
 
 .form-submit {
@@ -481,9 +465,6 @@ body {
 .not-found p {
     margin-bottom: 1.5rem;
 }
-
-
-
 
 @media (max-width: 992px) {
     .grid-container {
@@ -517,11 +498,11 @@ body {
     }
 
     .booking-form {
-        padding: 25px 20px;   /* Reduce el espacio interno en móviles */
+        padding: 25px 20px;
     }
 
     .form-row {
-        flex-direction: column; /* Deshace las dos columnas y las coloca una abajo de otra */
+        flex-direction: column;
         gap: 0;
     }
 }
