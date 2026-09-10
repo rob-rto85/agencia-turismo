@@ -460,6 +460,31 @@ body {
 }
 
 
+.logo {
+    width: 400px;
+    margin-bottom: 20px;
+}
+
+.hero, .not-found {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    text-align: center;
+}
+
+.not-found h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    margin-bottom: 1rem;
+}
+
+.not-found p {
+    margin-bottom: 1.5rem;
+}
+
+
+
+
 @media (max-width: 992px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
